@@ -568,7 +568,7 @@ def main(args):
     if not args.debug:
         if rank == 0:
             if args.use_wandb:
-                wandb_summary = wandb.init(project="po_bev_unsupervised", entity="bev-projects", dir=run_dir,
+                wandb_summary = wandb.init(project="skyeye_fv_training", dir=run_dir,
                                            name="skyeye_fv_train_{}".format(args.run_name), job_type=args.mode,
                                            notes=args.comment,
                                            config=config_dict)

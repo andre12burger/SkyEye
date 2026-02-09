@@ -1,0 +1,1 @@
+{"_wandb":{"runtime":247},"epoch":7,"_step":175183,"train/loss_batch":0.8364726305007935,"train/fv_sem_conf_batch":0.645585834980011,"train/fv_sem_loss_batch":0.8364726305007935,"_timestamp":1.7682481606735775e+09,"train/data_time_batch":0.12065243721008301,"train/lr":0.005,"_runtime":247.348499884,"train/batch_time_batch":2.937166452407837}

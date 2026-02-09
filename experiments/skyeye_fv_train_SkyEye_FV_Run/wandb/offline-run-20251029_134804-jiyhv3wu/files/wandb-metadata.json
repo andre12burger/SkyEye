@@ -1,0 +1,78 @@
+{
+    "os": "Linux-6.8.0-85-generic-x86_64-with-glibc2.17",
+    "python": "3.8.20",
+    "heartbeatAt": "2025-10-29T16:48:04.835394",
+    "startedAt": "2025-10-29T16:48:04.689477",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--run_name=SkyEye_FV_Run",
+        "--project_root_dir=/home/pdi-05/Documentos/automni/SkyEye",
+        "--seam_root_dir=/media/pdi-05/dcf281c2-bfc4-4072-808b-68681ee0a523/DATASETS/automni/kitti360_bev/kitti360_skyeye_release",
+        "--dataset_root_dir=/media/pdi-05/dcf281c2-bfc4-4072-808b-68681ee0a523/DATASETS/automni/kitti360_original",
+        "--mode=train",
+        "--defaults_config=kitti_defaults.ini",
+        "--config=kitti_fv.ini",
+        "--use_wandb=False",
+        "--comment=SkyEye FV Training"
+    ],
+    "state": "running",
+    "program": "train_fv.py",
+    "codePathLocal": "train_fv.py",
+    "codePath": "scripts/train_fv.py",
+    "git": {
+        "remote": "https://github.com/robot-learning-freiburg/SkyEye",
+        "commit": "a21c5d9081d8068b6554d94a2066ebc8d27b9cc4"
+    },
+    "email": "brexp14@gmail.com",
+    "root": "/home/pdi-05/Documentos/automni/SkyEye",
+    "host": "pdi-05",
+    "username": "pdi-05",
+    "executable": "/home/pdi-05/anaconda3/envs/skyeye_env/bin/python3.8",
+    "cpu_count": 4,
+    "cpu_count_logical": 4,
+    "cpu_freq": {
+        "current": 2399.9835000000003,
+        "min": 800.0,
+        "max": 3300.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2699.989,
+            "min": 800.0,
+            "max": 3300.0
+        },
+        {
+            "current": 2699.992,
+            "min": 800.0,
+            "max": 3300.0
+        },
+        {
+            "current": 2700.596,
+            "min": 800.0,
+            "max": 3300.0
+        },
+        {
+            "current": 2699.98,
+            "min": 800.0,
+            "max": 3300.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 218.50718307495117,
+            "used": 140.36467742919922
+        }
+    },
+    "gpu": "NVIDIA TITAN X (Pascal)",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA TITAN X (Pascal)",
+            "memory_total": 12884901888
+        }
+    ],
+    "memory": {
+        "total": 31.27437973022461
+    }
+}

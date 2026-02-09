@@ -15,8 +15,8 @@ OMP_NUM_THREADS=4 \
 torchrun --nproc_per_node="{NUM GPUS}" --master_addr='{IP ADDR}' --master_port={PORT NUM} train_bev.py \
                             --run_name={NAME OF THE RUN} \
                             --project_root_dir={PATH OF THE skyeye FOLDER} \
-                            --seam_root_dir={PATH OF THE KITTI360 SEAMLESS DIRECTORY} \
-                            --dataset_root_dir={PATH OF THE KITTI360 DATASET} \
+                            --seam_root_dir=/media/pdi-05/dcf281c2-bfc4-4072-808b-68681ee0a523/DATASETS/automni/kitti360_bev \
+                            --dataset_root_dir=/media/pdi-05/dcf281c2-bfc4-4072-808b-68681ee0a523/DATASETS/automni/kitti360_original \
                             --mode=train \
                             --use_wandb=False \
                             --defaults_config=kitti_defaults.ini \

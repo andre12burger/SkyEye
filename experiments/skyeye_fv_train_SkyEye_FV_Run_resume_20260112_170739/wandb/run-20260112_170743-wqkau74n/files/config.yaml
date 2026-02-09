@@ -1,0 +1,178 @@
+_wandb:
+    value:
+        cli_version: 0.23.1
+        e:
+            jlwdsc1d6uvxxehc5clt9fz18ufpz4gl:
+                args:
+                    - --run_name=SkyEye_FV_Run_resume_20260112_170739
+                    - --project_root_dir=/home/pdi-05/Documentos/automni/SkyEye
+                    - --seam_root_dir=/media/pdi-05/dcf281c2-bfc4-4072-808b-68681ee0a523/DATASETS/automni/kitti360_bev/kitti360_skyeye_release
+                    - --dataset_root_dir=/media/pdi-05/dcf281c2-bfc4-4072-808b-68681ee0a523/DATASETS/automni/kitti360_original
+                    - --mode=train
+                    - --defaults_config=kitti_defaults.ini
+                    - --config=kitti_fv.ini
+                    - --use_wandb=True
+                    - --resume=/home/pdi-05/Documentos/automni/SkyEye/experiments/skyeye_fv_train_SkyEye_FV_Run_resume_20251119_145637/saved_models/model_latest.pth
+                    - --comment=Resume epoch 7-20 com W&B monitoring
+                codePath: scripts/train_fv.py
+                codePathLocal: train_fv.py
+                cpu_count: 4
+                cpu_count_logical: 4
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "234620301312"
+                        used: "170925207552"
+                email: andreburger.furg@gmail.com
+                executable: /home/pdi-05/anaconda3/envs/skyeye_env/bin/python
+                git:
+                    commit: a21c5d9081d8068b6554d94a2066ebc8d27b9cc4
+                    remote: https://github.com/robot-learning-freiburg/SkyEye
+                gpu: NVIDIA TITAN X (Pascal)
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Pascal
+                      cudaCores: 3584
+                      memoryTotal: "12884901888"
+                      name: NVIDIA TITAN X (Pascal)
+                      uuid: GPU-e522b3d1-c5f7-7b45-2e91-6411f714eab6
+                host: pdi-05
+                memory:
+                    total: "33580519424"
+                os: Linux-6.8.0-90-generic-x86_64-with-glibc2.17
+                program: train_fv.py
+                python: CPython 3.8.20
+                root: /home/pdi-05/Documentos/automni/SkyEye/experiments/skyeye_fv_train_SkyEye_FV_Run_resume_20260112_170739
+                startedAt: "2026-01-12T20:07:43.888327Z"
+                writerId: jlwdsc1d6uvxxehc5clt9fz18ufpz4gl
+        m: []
+        mask/class_labels:
+            val_samples/wandb_fv_sem_wandb_delimeter_ground_truth:
+                key: val_samples/wandb_fv_sem_wandb_delimeter_ground_truth
+                type: mask/class_labels
+                value:
+                    "0": road
+                    "1": sidewalk
+                    "2": gate
+                    "3": vegetation
+                    "4": terrain
+                    "5": sky
+                    "6": person
+                    "7": bicycle
+                    "8": car
+                    "9": bus
+            val_samples/wandb_fv_sem_wandb_delimeter_predictions:
+                key: val_samples/wandb_fv_sem_wandb_delimeter_predictions
+                type: mask/class_labels
+                value:
+                    "0": road
+                    "1": sidewalk
+                    "2": gate
+                    "3": vegetation
+                    "4": terrain
+                    "5": sky
+                    "6": person
+                    "7": bicycle
+                    "8": car
+                    "9": bus
+        python_version: 3.8.20
+        t:
+            "1":
+                - 1
+                - 41
+                - 79
+            "2":
+                - 1
+                - 41
+                - 79
+            "3":
+                - 2
+                - 13
+                - 16
+                - 61
+            "4": 3.8.20
+            "5": 0.23.1
+            "12": 0.23.1
+            "13": linux-x86_64
+base:
+    value:
+        activation: leaky_relu
+        activation_slope: "0.01"
+        base: efficientdet-d3
+        base_params: '{}'
+        bn_frozen: "no"
+        gn_groups: "0"
+        normalization_mode: syncbn
+        num_frozen: "0"
+        weights: ""
+cameras:
+    value:
+        bev_params: '{"f": 336, "cam_z": 25}'
+        extrinsics: '{"front": {"translation": (0.8, 0.3, 1.55), "rotation": (-85, 0, 180)}}'
+        fv_extrinsics: '{"translation": (0, 0, 0), "rotation": (-5.6416, 0, 0)}'
+        intrinsics: '{"front": {"fx": 552.554261, "fy": 552.554261, "px": 682.049453, "py": 238.769549}}'
+dataloader:
+    value:
+        bev_crop: (768, 704)
+        front_resize: (384, 1408)
+        fvsem_step_size: "2"
+        fvsem_window_size: "10"
+        longest_max_size: "1408"
+        random_brightness: (0.8, 1.2)
+        random_contrast: (0.8, 1.2)
+        random_flip: "no"
+        random_hue: (0, 0)
+        random_saturation: (1, 1)
+        rgb_cameras: ("front")
+        rgb_mean: (0.485, 0.456, 0.406)
+        rgb_std: (0.229, 0.224, 0.225)
+        scale: "1"
+        shortest_size: "376"
+        total_window_size: "4"
+        train_batch_size: "1"
+        train_set: train
+        train_workers: "2"
+        val_batch_size: "1"
+        val_set: val
+        val_workers: "2"
+dataset:
+    value:
+        fv_sky_index: "5"
+        fv_veg_index: "3"
+general:
+    value:
+        cudnn_benchmark: "no"
+        log_interval: "10"
+        log_train_samples: "yes"
+        val_interval: "1"
+optimizer:
+    value:
+        base_lr: "0.005"
+        loss_weights: '{"fv_sem_loss": 1, "bev_sem_loss": 0}'
+        momentum: "0.9"
+        nesterov: "yes"
+        opt_algo: sgd
+        weight_decay: "0.0001"
+        weight_decay_norm: "no"
+scheduler:
+    value:
+        burn_in_start: "0.00333"
+        burn_in_steps: "0"
+        epochs: "20"
+        params: '{"milestones": [15, 18], "gamma": [0.5, 0.2]}'
+        type: multistep_multigamma
+        update_mode: epoch
+sem:
+    value:
+        bev_class_weights: (2.5539, 3.8968, 1.9405, 5.6612, 29.7894, 24.0978, 3.7109, 8.2586)
+        bev_ohem: "0.25"
+        fpn_levels: "4"
+        fpn_min_level: "0"
+        fv_class_weights: (2.5539, 3.8968, 1.9405, 1.7729, 5.6612, 3.6329, 29.7894, 24.0978, 3.7109, 8.2586)
+        fv_ohem: "0.25"
+        pooling_size: (64, 64)
+voxelgrid:
+    value:
+        in_channels: '{"efficientdet-d0": 64, "efficientdet-d3": 160}'
+        in_feat_scale: "0.125"
+        y_extents: (-17, 3)

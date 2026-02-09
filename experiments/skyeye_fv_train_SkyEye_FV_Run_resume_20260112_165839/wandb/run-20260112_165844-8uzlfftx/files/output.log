@@ -1,0 +1,119 @@
+Loading config file from: /home/pdi-05/Documentos/automni/SkyEye/experiments/config/kitti_fv.ini
+{
+    "general": {
+        "val_interval": "1",
+        "log_interval": "10",
+        "cudnn_benchmark": "no",
+        "log_train_samples": "yes"
+    },
+    "base": {
+        "base": "efficientdet-d3",
+        "weights": "",
+        "normalization_mode": "syncbn",
+        "activation": "leaky_relu",
+        "activation_slope": "0.01",
+        "gn_groups": "0",
+        "base_params": "{}",
+        "num_frozen": "0",
+        "bn_frozen": "no"
+    },
+    "voxelgrid": {
+        "in_channels": "{\"efficientdet-d0\": 64, \"efficientdet-d3\": 160}",
+        "in_feat_scale": "0.125",
+        "y_extents": "(-17, 3)"
+    },
+    "sem": {
+        "fpn_min_level": "0",
+        "fpn_levels": "4",
+        "pooling_size": "(64, 64)",
+        "fv_ohem": "0.25",
+        "bev_ohem": "0.25",
+        "fv_class_weights": "(2.5539, 3.8968, 1.9405, 1.7729, 5.6612, 3.6329, 29.7894, 24.0978, 3.7109, 8.2586)",
+        "bev_class_weights": "(2.5539, 3.8968, 1.9405, 5.6612, 29.7894, 24.0978, 3.7109, 8.2586)"
+    },
+    "optimizer": {
+        "opt_algo": "sgd",
+        "base_lr": "0.005",
+        "weight_decay": "0.0001",
+        "weight_decay_norm": "no",
+        "momentum": "0.9",
+        "nesterov": "yes",
+        "loss_weights": "{\"fv_sem_loss\": 1, \"bev_sem_loss\": 0}"
+    },
+    "scheduler": {
+        "epochs": "20",
+        "params": "{\"milestones\": [15, 18], \"gamma\": [0.5, 0.2]}",
+        "type": "multistep_multigamma",
+        "update_mode": "epoch",
+        "burn_in_steps": "0",
+        "burn_in_start": "0.00333"
+    },
+    "cameras": {
+        "intrinsics": "{\"front\": {\"fx\": 552.554261, \"fy\": 552.554261, \"px\": 682.049453, \"py\": 238.769549}}",
+        "extrinsics": "{\"front\": {\"translation\": (0.8, 0.3, 1.55), \"rotation\": (-85, 0, 180)}}",
+        "bev_params": "{\"f\": 336, \"cam_z\": 25}",
+        "fv_extrinsics": "{\"translation\": (0, 0, 0), \"rotation\": (-5.6416, 0, 0)}"
+    },
+    "dataset": {
+        "fv_sky_index": "5",
+        "fv_veg_index": "3"
+    },
+    "dataloader": {
+        "rgb_cameras": "(\"front\")",
+        "total_window_size": "4",
+        "fvsem_window_size": "10",
+        "train_batch_size": "1",
+        "val_batch_size": "1",
+        "shortest_size": "376",
+        "longest_max_size": "1408",
+        "rgb_mean": "(0.485, 0.456, 0.406)",
+        "rgb_std": "(0.229, 0.224, 0.225)",
+        "random_flip": "no",
+        "scale": "1",
+        "bev_crop": "(768, 704)",
+        "front_resize": "(384, 1408)",
+        "random_brightness": "(0.8, 1.2)",
+        "random_contrast": "(0.8, 1.2)",
+        "random_saturation": "(1, 1)",
+        "random_hue": "(0, 0)",
+        "train_workers": "2",
+        "val_workers": "2",
+        "train_set": "train",
+        "val_set": "val",
+        "fvsem_step_size": "2"
+    }
+}
+Creating train dataloader for Kitti360 dataset
+Creating val dataloader for Kitti360 dataset
+[DEBUG] seam_root_dir= '/media/pdi-05/dcf281c2-bfc4-4072-808b-68681ee0a523/DATASETS/automni/kitti360_bev/kitti360_skyeye_release'
+[DEBUG] bev_meta_path= '/media/pdi-05/dcf281c2-bfc4-4072-808b-68681ee0a523/DATASETS/automni/kitti360_bev/kitti360_skyeye_release/metadata_ortho.bin' exists? True
+[DEBUG] fv_meta_path= '/media/pdi-05/dcf281c2-bfc4-4072-808b-68681ee0a523/DATASETS/automni/kitti360_bev/kitti360_skyeye_release/metadata_front.bin' exists? True
+Loading 100% file
+[DEBUG] seam_root_dir= '/media/pdi-05/dcf281c2-bfc4-4072-808b-68681ee0a523/DATASETS/automni/kitti360_bev/kitti360_skyeye_release'
+[DEBUG] bev_meta_path= '/media/pdi-05/dcf281c2-bfc4-4072-808b-68681ee0a523/DATASETS/automni/kitti360_bev/kitti360_skyeye_release/metadata_ortho.bin' exists? True
+[DEBUG] fv_meta_path= '/media/pdi-05/dcf281c2-bfc4-4072-808b-68681ee0a523/DATASETS/automni/kitti360_bev/kitti360_skyeye_release/metadata_front.bin' exists? True
+Creating backbone model efficientdet-d3
+Loaded pretrained weights for efficientdet-d3
+/home/pdi-05/anaconda3/envs/skyeye_env/lib/python3.8/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3190.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+Loading snapshot from /home/pdi-05/Documentos/automni/SkyEye/experiments/skyeye_fv_train_SkyEye_FV_Run_resume_20260105_161140/saved_models/model_latest.pth
+Starting epoch 8
+/home/pdi-05/anaconda3/envs/skyeye_env/lib/python3.8/site-packages/torch/nn/functional.py:4227: UserWarning: Default grid_sample and affine_grid behavior has changed to align_corners=False since 1.3.0. Please specify align_corners=True if the old behavior is desired. See the documentation of grid_sample for details.
+  warnings.warn(
+[8/20] [10/25019]	lr=0.00500	fv_sem_conf=0.64555	fv_sem_loss=0.79368 (1.25719)	loss=0.79368 (1.25719)	batch_time=2.65855 (3.15513)	data_time=0.10493 (0.65928)
+[8/20] [20/25019]	lr=0.00500	fv_sem_conf=0.64560	fv_sem_loss=1.06830 (1.25705)	loss=1.06830 (1.25705)	batch_time=2.75151 (2.95957)	data_time=0.10121 (0.38288)
+[8/20] [30/25019]	lr=0.00500	fv_sem_conf=0.64558	fv_sem_loss=1.55974 (1.25698)	loss=1.55974 (1.25698)	batch_time=2.72177 (2.88150)	data_time=0.09677 (0.28939)
+[8/20] [40/25019]	lr=0.00500	fv_sem_conf=0.64559	fv_sem_loss=1.02478 (1.25696)	loss=1.02478 (1.25696)	batch_time=2.70679 (2.83842)	data_time=0.10644 (0.24102)
+[8/20] [50/25019]	lr=0.00500	fv_sem_conf=0.64559	fv_sem_loss=0.83647 (1.25693)	loss=0.83647 (1.25693)	batch_time=2.93717 (2.84126)	data_time=0.12065 (0.21472)
+Traceback (most recent call last):
+  File "train_fv.py", line 717, in <module>
+    main(parser.parse_args())
+  File "train_fv.py", line 656, in main
+    global_step = train(model, optimizer, grad_scaler, scheduler, train_dataloader, train_meters,
+  File "train_fv.py", line 324, in train
+    grad_scaler.scale(losses['loss']).backward()
+  File "/home/pdi-05/anaconda3/envs/skyeye_env/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/home/pdi-05/anaconda3/envs/skyeye_env/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt

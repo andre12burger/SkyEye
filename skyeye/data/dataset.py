@@ -47,10 +47,19 @@ class BEVKitti360Dataset(data.Dataset):
 
     # Load the train or the validation split
     def _load_split(self):
-        with open(os.path.join(self.seam_root_dir, BEVKitti360Dataset._BEV_METADATA_FILE), "rb") as fid:
+        bev_meta_path = os.path.join(self.seam_root_dir, BEVKitti360Dataset._BEV_METADATA_FILE)
+        fv_meta_path = os.path.join(self.seam_root_dir, BEVKitti360Dataset._FV_METADATA_FILE)
+        # Debug prints to diagnose FileNotFound issues
+        print("[DEBUG] seam_root_dir=", repr(self.seam_root_dir))
+        print("[DEBUG] bev_meta_path=", repr(bev_meta_path), "exists?", os.path.exists(bev_meta_path))
+        print("[DEBUG] fv_meta_path=", repr(fv_meta_path), "exists?", os.path.exists(fv_meta_path))
+        if not os.path.exists(bev_meta_path):
+            raise FileNotFoundError(f"BEV metadata file not found: {bev_meta_path}")
+        if not os.path.exists(fv_meta_path):
+            raise FileNotFoundError(f"FV metadata file not found: {fv_meta_path}")
+        with open(bev_meta_path, "rb") as fid:
             bev_metadata = umsgpack.unpack(fid, encoding="utf-8")
-
-        with open(os.path.join(self.seam_root_dir, BEVKitti360Dataset._FV_METADATA_FILE), 'rb') as fid:
+        with open(fv_meta_path, 'rb') as fid:
             fv_metadata = umsgpack.unpack(fid, encoding="utf-8")
 
         # Read the files for this split

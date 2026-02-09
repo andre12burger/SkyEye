@@ -1,0 +1,52 @@
+{
+  "os":  "Linux-6.8.0-90-generic-x86_64-with-glibc2.17",
+  "python":  "CPython 3.8.20",
+  "startedAt":  "2026-01-12T20:07:43.888327Z",
+  "args":  [
+    "--run_name=SkyEye_FV_Run_resume_20260112_170739",
+    "--project_root_dir=/home/pdi-05/Documentos/automni/SkyEye",
+    "--seam_root_dir=/media/pdi-05/dcf281c2-bfc4-4072-808b-68681ee0a523/DATASETS/automni/kitti360_bev/kitti360_skyeye_release",
+    "--dataset_root_dir=/media/pdi-05/dcf281c2-bfc4-4072-808b-68681ee0a523/DATASETS/automni/kitti360_original",
+    "--mode=train",
+    "--defaults_config=kitti_defaults.ini",
+    "--config=kitti_fv.ini",
+    "--use_wandb=True",
+    "--resume=/home/pdi-05/Documentos/automni/SkyEye/experiments/skyeye_fv_train_SkyEye_FV_Run_resume_20251119_145637/saved_models/model_latest.pth",
+    "--comment=Resume epoch 7-20 com W&B monitoring"
+  ],
+  "program":  "train_fv.py",
+  "codePath":  "scripts/train_fv.py",
+  "codePathLocal":  "train_fv.py",
+  "git":  {
+    "remote":  "https://github.com/robot-learning-freiburg/SkyEye",
+    "commit":  "a21c5d9081d8068b6554d94a2066ebc8d27b9cc4"
+  },
+  "email":  "andreburger.furg@gmail.com",
+  "root":  "/home/pdi-05/Documentos/automni/SkyEye/experiments/skyeye_fv_train_SkyEye_FV_Run_resume_20260112_170739",
+  "host":  "pdi-05",
+  "executable":  "/home/pdi-05/anaconda3/envs/skyeye_env/bin/python",
+  "cpu_count":  4,
+  "cpu_count_logical":  4,
+  "gpu":  "NVIDIA TITAN X (Pascal)",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "234620301312",
+      "used":  "170925207552"
+    }
+  },
+  "memory":  {
+    "total":  "33580519424"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA TITAN X (Pascal)",
+      "memoryTotal":  "12884901888",
+      "cudaCores":  3584,
+      "architecture":  "Pascal",
+      "uuid":  "GPU-e522b3d1-c5f7-7b45-2e91-6411f714eab6"
+    }
+  ],
+  "cudaVersion":  "13.0",
+  "writerId":  "jlwdsc1d6uvxxehc5clt9fz18ufpz4gl"
+}
